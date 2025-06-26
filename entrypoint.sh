@@ -46,6 +46,7 @@ EOF
 sh -c "npm install" \
 && sh -c "npm install vue-template-compiler" \
 && sh -c "npm install tailwindcss" \
+&& sh -c "npm install @tailwindcss/cli" \
 && sh -c "npm run build" \
 && sh -c "aws s3 sync ${SOURCE_DIR:-public} s3://${AWS_S3_BUCKET}/${DEST_DIR} \
               --profile react-deploy-to-s3-action \
